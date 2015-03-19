@@ -112,7 +112,7 @@ case "$1" in
     APP="$2"
 
     if [[ -z "${*:3}" ]]; then
-      echo "Usage: dokku config:set APP KEY1=VALUE1 [KEY2=VALUE2 ...]"
+      echo "Usage: dokku config:set-norestart APP KEY1=VALUE1 [KEY2=VALUE2 ...]"
       echo "Must specify KEY and VALUE to set."
       exit 1
     fi
@@ -125,7 +125,7 @@ case "$1" in
 
     for var; do
       if [[ $var != *"="* ]]; then
-        echo "Usage: dokku config:set APP KEY1=VALUE1 [KEY2=VALUE2 ...]"
+        echo "Usage: dokku config:set-norestart APP KEY1=VALUE1 [KEY2=VALUE2 ...]"
         echo "Must specify KEY and VALUE to set."
         exit 1
       fi
@@ -177,7 +177,7 @@ ${var}"
     APP="$2"
 
     if [[ -z $3 ]]; then
-      echo "Usage: dokku config:unset APP KEY1 [KEY2 ...]"
+      echo "Usage: dokku config:unset-norestart APP KEY1 [KEY2 ...]"
       echo "Must specify KEY to unset."
       exit 1
     fi
